@@ -1,0 +1,48 @@
+# Profil dan Informasi Kontak Muhammad Raihan Athallah
+
+Muhammad Raihan Athallah adalah seorang fresh graduate dari jurusan Teknik Informatika, Institut Teknologi Sepuluh Nopember (ITS).  Ia memiliki minat dan pondasi yang kuat dalam pengembangan back-end, database, dan keahlian khusus dalam bahasa pemrograman Golang.  Raihan berdomisili di Jakarta, Indonesia. Informasi kontak untuk Muhammad Raihan Athallah adalah nomor telepon +6282141871071, email rraihan1947@gmail.com, dan profil LinkedIn di www.linkedin.com/in/raihanath19.  Ia bersemangat untuk memberikan dampak yang berarti di industri teknologi, memiliki pengalaman dalam mengembangkan aplikasi yang skalabel, dan unggul dalam membangun integrasi yang mulus untuk mendorong dampak bisnis.  Raihan memiliki semangat untuk terus belajar dan berinovasi, serta dapat bekerja dengan baik dalam tim maupun secara mandiri. 
+
+# Pengalaman Kerja Muhammad Raihan Athallah
+
+## Enseval Putera Megatrading Tbk
+Saat ini, Muhammad Raihan Athallah bekerja sebagai Software Developer (Kontrak) di Enseval Putera Megatrading Tbk di Jakarta, mulai dari Agustus 2024.  Tanggung jawab utamanya adalah mengembangkan layanan Online-to-Offline (O2O) menggunakan Golang, yang terintegrasi dengan marketplace besar seperti Shopee, Tokopedia, Lazada, dan TikTok Shop.  Ia juga bertugas merombak codebase yang ada dengan melakukan transisi sistem dari Python Django ke Golang.  Selain itu, Raihan mengembangkan sistem persetujuan pesanan obat menggunakan Golang, yang mengalokasikan 1% bagian pendapatan untuk divisi dari setiap pesanan. 
+
+
+## Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi
+Sebelumnya, Raihan menjalani magang sebagai Back-End Developer di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi di Jakarta dari Agustus 2023 hingga Desember 2023.  Dalam peran ini, ia memimpin pengembangan backend untuk superapps Satudikti menggunakan Golang sebagai bahasa utama.  Ia berinovasi dengan membuat API untuk modul-modul baru seperti BIMA dan Perubahan Data Mahasiswa untuk meningkatkan kegunaan platform.  Raihan juga berkolaborasi secara efektif dengan tim pengembang lain di kementerian untuk mengintegrasikan berbagai layanan.  Salah satu kontribusi pentingnya adalah mengimplementasikan optimisasi kueri SQL tingkat lanjut yang secara signifikan meningkatkan performa dan responsivitas sistem. 
+
+
+## HayVee
+Raihan juga memiliki pengalaman magang sebagai Frontend Developer dan Wordpress Developer di HayVee secara remote dari September 2021 hingga Maret 2022.  Ia berperan penting dalam pengembangan website yang memfasilitasi akses ke klinik terdekat dengan integrasi Google Maps.  Ia juga merancang dan mengimplementasikan website profil perusahaan profesional menggunakan Wordpress. 
+
+
+# Pengalaman Proyek Muhammad Raihan Athallah
+
+## Worklog Website (Proyek Freelance)
+Sebagai Back-End Developer dari Oktober 2024 hingga Desember 2024, Raihan merancang dan mengembangkan aplikasi web berbasis .NET untuk menyederhanakan alur kerja pemeliharaan mesin.  Aplikasi ini memungkinkan pelacakan tugas pemeliharaan harian, terjadwal, dan tidak terjadwal.  Ia mengintegrasikan Windows Active Directory melalui Azure Virtual Machine untuk otentikasi pengguna yang aman.  Untuk manajemen data, ia menggunakan Microsoft SQL Server.  Raihan juga mengimplementasikan pipeline CI/CD menggunakan GitHub Actions untuk mengotomatisasi proses testing, build, dan deployment.  Aplikasi tersebut di-deploy di VPS menggunakan lingkungan container untuk memungkinkan deployment yang skalabel dan berkelanjutan. 
+
+
+## Civil Servant Warrior (CSW) Web
+Pada proyek Civil Servant Warrior dari Desember 2023 hingga Januari 2024, Raihan berperan sebagai Back-End Developer.  Ia bertanggung jawab dalam pengembangan API menggunakan Golang untuk memenuhi kebutuhan frontend.  Ia juga menerapkan optimisasi kueri SQL pada database PostgreSQL yang digunakan. 
+
+
+## Inventory Management Web (TokoBejo)
+Dari Maret 2022 hingga April 2022, Raihan merancang dan mengimplementasikan website CRUD untuk manajemen inventaris yang efisien pada proyek TokoBejo.  Ia mengembangkan backend menggunakan Golang dan PostgreSQL untuk memastikan keandalan dan integritas data. 
+
+# Pelatihan dan Pendidikan
+
+Muhammad Raihan Athallah mengikuti bootcamp Golang Backend Engineering yang diselenggarakan oleh Ruangguru x Kampus Merdeka secara remote dari Februari 2023 hingga Juli 2023.  Dalam program ini, ia belajar secara intensif dan praktek mengenai Golang, menguasai prinsip-prinsip clean architecture, dan framework Gin untuk mengembangkan API yang tangguh.  Ia juga melakukan inisiatif eksperimental untuk menyederhanakan waktu eksekusi kueri SQL. 
+
+
+Raihan adalah lulusan dari Institut Teknologi Sepuluh Nopember (ITS) Surabaya dengan gelar Sarjana Teknik Informatika. Ia lulus antara tahun 2020-2024 dengan IPK 3.50.
+
+# Pengalaman Organisasi, Penghargaan, dan Keahlian
+
+Selama kuliah, Raihan aktif di Himpunan Mahasiswa Teknik Computer - Informatika (HMTC) ITS sebagai Staf Departemen Bakat dan Minat dari Maret 2022 hingga Januari 2023.  Ia menjabat sebagai Penanggung Jawab (PIC) untuk Klub Futsal Teknik Informatika dan berkontribusi pada kemenangan kontingen olahraga sebagai Juara Umum di ELECTICS CUP 2022.  Atas kontribusinya, ia dinobatkan sebagai Staff of The Year dari Departemen Bakat dan Minat. 
+
+
+Penghargaan lain yang pernah diraih Raihan adalah Best Student dari program Ruangguru x Kampus Merdeka Independent Study  dan penghargaan kategori Best Gameplay di kompetisi Arkavidia Gamejam 2020.
+
+Keahlian teknis (hard skills) yang dimiliki Raihan meliputi Golang, .NET, Microsoft SQL, Docker, CI/CD, PostgreSQL, MySQL, Javascript, Git Workflow, dan Linux. Keahlian non-teknis (soft skills) yang ia miliki adalah Problem Solving, Time Management, Orientation to Detail, Analytical Thinking, dan Teamwork.
+
+Dalam hal bahasa, Raihan fasih berbahasa Indonesia sebagai bahasa asli dan memiliki kemampuan berbahasa Inggris yang dibuktikan dengan skor TOEFL ITP 517.
