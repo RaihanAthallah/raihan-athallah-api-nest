@@ -61,7 +61,7 @@ jobs:
             docker rm -f $CONTAINER_NAME || true
   
             echo "Running new container..."
-            docker run -d --name $CONTAINER_NAME -p 8090:8090 \
+            docker run -d --name $CONTAINER_NAME -p 8091:3000 \
               --env-file $ENV_PATH \
               --restart always \
               $IMAGE_NAME:latest
