@@ -1,0 +1,70 @@
+name: CI/CD Pipeline for Nest.js API
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ secrets.GHCR_USERNAME }} --password-stdin
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build TypeScript project
+        run: npm run build
+
+      - name: Build and tag Docker image
+        run: |
+          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
+          docker build -t $IMAGE_NAME:latest .
+          docker tag $IMAGE_NAME:latest $IMAGE_NAME:${{ github.sha }}
+
+      - name: Push Docker image to GHCR
+        run: |
+          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
+          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VM via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
+            CONTAINER_NAME=express-api
+            ENV_PATH="${{ secrets.ENV_PATH }}/.env"
+  
+            echo "Pulling latest image..."
+            docker pull $IMAGE_NAME:latest
+  
+            echo "Stopping and removing old container..."
+            docker rm -f $CONTAINER_NAME || true
+  
+            echo "Running new container..."
+            docker run -d --name $CONTAINER_NAME -p 8090:8090 \
+              --env-file $ENV_PATH \
+              --restart always \
+              $IMAGE_NAME:latest
+  
+            echo "Removing unused Docker images..."
+            docker image prune -af
