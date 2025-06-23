@@ -28,4 +28,5 @@ COPY --from=builder /usr/src/app/node_modules ./node_modules
 EXPOSE 3000
 
 # Run the compiled app
-CMD ["node", "dist/main"]
+CMD ["node", "dist/src/main"]
+
