@@ -29,13 +29,13 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
+          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/nest-rag-api
           docker build -t $IMAGE_NAME:latest .
           docker tag $IMAGE_NAME:latest $IMAGE_NAME:${{ github.sha }}
 
       - name: Push Docker image to GHCR
         run: |
-          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
+          IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/nest-rag-api
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
 
@@ -50,8 +50,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/express-api
-            CONTAINER_NAME=express-api
+            IMAGE_NAME=ghcr.io/${{ secrets.GHCR_USERNAME }}/nest-rag-api
+            CONTAINER_NAME=nest-rag-api
             ENV_PATH="${{ secrets.ENV_PATH }}/.env"
   
             echo "Pulling latest image..."
