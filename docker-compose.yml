@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    image: ghcr.io/raihanathallah/nest-rag-api:latest
+    container_name: raihan-portofolio-api-nest
+    restart: always # Ensures the container restarts on failure
+    working_dir: /app
+    env_file:
+      - .env # Use a local .env file for environment variables
+    ports:
+      - "8091:3000"
+    command: ["node", "dist/index.js"]
