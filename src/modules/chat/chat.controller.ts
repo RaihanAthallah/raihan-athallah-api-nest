@@ -1,11 +1,12 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { ChatService } from './chat.service';
 import { ChatRequestDto } from './chat.dto';
-import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiBody, ApiSecurity } from '@nestjs/swagger';
 import { CustomApiResponse as CustomApiResponse } from '../../common/helpers/http.helper';
 import { ErrorResponse, SuccessResponse } from 'src/common/model/dto/response.dto';
 
 @ApiTags('Chat')
+@ApiSecurity('x-api-key')
 @Controller('chat')
 export class ChatController {
   constructor(private readonly chatService: ChatService) {}
@@ -18,6 +19,7 @@ export class ChatController {
   @ApiBody({ type: ChatRequestDto })
   async sendChat(@Body() chatRequest: ChatRequestDto) {
     try {
+      console.log('Received chat request:', chatRequest);
       const response = await this.chatService.ask(chatRequest);
       return CustomApiResponse.success(response, 'Chat message sent successfully', 200);
     } catch (error) {

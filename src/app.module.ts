@@ -20,6 +20,6 @@ import { VectorStoreModule } from './common/config/vector.config'; // Assuming y
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
+    consumer.apply(LoggerMiddleware).forRoutes('*'); // Assuming you have KeyMiddleware for API key validation
   }
 }

@@ -1,6 +1,6 @@
 import { Inject, Injectable, InternalServerErrorException, Logger } from '@nestjs/common';
 import { GoogleGenAI } from '@google/genai';
-import { ChatRequestDto } from './chat.dto';
+import { ChatRequestDto, ChatResponseDto } from './chat.dto';
 import { GEMINI_AI } from '../../common/config/genai.config';
 import { VECTOR_STORE } from '../../common/config/vector.config';
 import { PGVectorStore } from '@langchain/community/vectorstores/pgvector';
@@ -20,7 +20,7 @@ export class ChatService {
    * @param askQuestionDto DTO yang berisi pertanyaan dari user.
    * @returns Jawaban yang dihasilkan oleh AI berdasarkan konteks dari database.
    */
-  async ask(ChatRequestDto: ChatRequestDto): Promise<string | undefined> {
+  async ask(ChatRequestDto: ChatRequestDto): Promise<ChatResponseDto | undefined> {
     const { message } = ChatRequestDto;
     this.logger.log(`Menerima pertanyaan baru: "${message}"`);
 
@@ -32,7 +32,7 @@ export class ChatService {
 
       if (retrievedDocs.length === 0) {
         this.logger.warn('Tidak ada konteks yang ditemukan untuk pertanyaan tersebut.');
-        return 'Maaf, saya tidak dapat menemukan informasi yang relevan di dalam dokumen saya untuk menjawab pertanyaan ini.';
+        return new ChatResponseDto('Maaf, saya tidak dapat menemukan informasi yang relevan di dalam dokumen saya untuk menjawab pertanyaan ini.');
       }
 
       // --- TAHAP 2: AUGMENTATION (Penyusunan Prompt) ---
@@ -66,7 +66,7 @@ export class ChatService {
       const responseText = result.text;
 
       this.logger.log('Jawaban berhasil dibuat.');
-      return responseText;
+      return new ChatResponseDto(responseText);
     } catch (error) {
       this.logger.error('Terjadi error selama proses RAG', error.stack);
       throw new InternalServerErrorException('Gagal memproses permintaan Anda karena ada masalah internal.');
